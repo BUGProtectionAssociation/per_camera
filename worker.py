@@ -26,8 +26,8 @@ bl_info = {
     "location": "Output Properties Panel",
     "description": "Set render resolution based camera name. Camera name must end with - hyphen then resolution. Example: CameraOne-1920x1080",
     "warning": "",
-    "wiki_url": "https://github.com/SidewaysUpJoe/blender-renderCompleteAlert",
-    "tracker_url": "https://github.com/SidewaysUpJoe/blender-renderCompleteAlert/issues",
+    "wiki_url": "https://github.com/SidewaysUpJoe/blender-Change-Render-Resolution-Based-On-Camera-Name/wiki",
+    "tracker_url": "https://github.com/SidewaysUpJoe/blender-Change-Render-Resolution-Based-On-Camera-Name/issues",
     'support': 'COMMUNITY',
     "category": "Render",
 }  
