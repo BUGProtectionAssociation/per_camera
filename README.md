@@ -13,9 +13,10 @@ CameraOne-3840x2160
 the render resolution will be 3840x2160
 
 The add-ons panel is in the Output Properties Panel.  
-There are two options:
-1) To turn it on and off 
-2) To restore the original set resolution once render is done
+There are three options:
+1) Turn it On/Off to auto change resolution during rendering (F12)
+2) To restore the original set resolution once render is done  
+3) "Change Resolution In Panel" button. This button can be configured for Keymapping (default Ctrl-NUM_0, search for "Camera Resolution Render Changer" in Blenders Keymap settings) and will only change the resolution in the 'output panel'.
 
 Note: you can use the timeline and set markers for changing cameras, BUT AGAIN, this add-on only works for still images and not animations. What ever active camera is set will effect the rendered resolution.
 
