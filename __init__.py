@@ -1,25 +1,21 @@
-
+bl_info = {
+    "name": "Render Resolution From Camera Name 每个相机自带渲染分辨率",
+    "author": "SidewaysUp Joe; Yang",
+    "version": (1, 10, 2),
+    "blender": (3, 3, 5),
+    "location": "Output Properties Panel ",
+    "description": "Set render resolution based camera name. Example: CameraOne-1920x1080\n渲染分辨率基于相机名称CameraOne-1920x1080",
+    "warning": "",
+    "doc_url": "https://github.com/SidewaysUpJoe/blender-Change-Render-Resolution-Based-On-Camera-Name/wiki",
+    "category": "Render",
+    "support": "COMMUNITY",
+}  
 
 from . import cameraresrender
 
-
-bl_info = {
-    "name": "Render Resolution From Camera Name",
-    "author": "SidewaysUp Joe",
-    "version": (1, 1, 0),
-    "blender": (2, 80, 0),
-    "location": "Output Properties Panel",
-    "description": "Set render resolution based camera name. Example: CameraOne-1920x1080",
-    "warning": "",
-    "wiki_url": "https://github.com/SidewaysUpJoe/blender-Change-Render-Resolution-Based-On-Camera-Name/wiki",
-    "tracker_url": "https://github.com/SidewaysUpJoe/blender-Change-Render-Resolution-Based-On-Camera-Name/issues",
-    'support': 'COMMUNITY',
-    "category": "Render",
-}  
-
 def register(): 
     cameraresrender.register()    
-    print("registered init")
+    print("registered init.  相机名称范例: cam1-512x256")
     
 
 def unregister():
