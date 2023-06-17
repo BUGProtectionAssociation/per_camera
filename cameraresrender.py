@@ -66,8 +66,8 @@ class cameraRes_Panel(Panel):
         scene = context.scene
         cameraRestPanel = scene.cameraRes_tool
         
-        layout.prop(cameraRestPanel, "cameraRes_bool")
-        layout.prop(cameraRestPanel, "cameraResDefault_bool")
+        layout.prop(cameraRestPanel, "cameraRes_bool", text="F12自动切换分辨率")
+        layout.prop(cameraRestPanel, "cameraResDefault_bool", text="渲染后自动恢复场景分辨率")
         layout.operator("my.change_camera_res_in_panel", icon='CAMERA_DATA', text="应用激活相机的分辨率")
         
 frame_handlers = [getattr(handlers, name)
