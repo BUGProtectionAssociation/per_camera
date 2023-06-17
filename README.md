@@ -1,23 +1,43 @@
-# Change Your Render Resolution Based On Camera Name
-The following add-on only works with still images, not animations.
+#基于摄影机名称更改渲染分辨率
 
-Tested on Blender 2.8
+以下加载项仅适用于静态图像，而不适用于动画。
 
-This add-on was created based on Zoot (Gavin Scott) (https://blenderartists.org/t/does-anyone-know-of-an-addon-that-can-set-a-unique-resolution-for-each-camera/1252294/4?u=sidewaysupjoe) suggestion.
 
-If you name your camera followed by a - (hyphen) and resolution it will render to that Resolution.  
-Example: CameraOne-1920x1080  
-the render resolution will be 1920x1080
+### 在blender搅拌机3.5上测试
 
-CameraOne-3840x2160  
-the render resolution will be 3840x2160
 
-The add-ons panel is in the Output Properties Panel.  
-There are three options:
-1) Turn it On/Off to auto change resolution during rendering (F12)
-2) To restore the original set resolution once render is done  
-3) "Change Resolution In Panel" button. This button can be configured for Keymapping (default Ctrl-NUM_0, search for "Camera Resolution Render Changer" in Blenders Keymap settings) and will only change the resolution in the 'output panel'.
+此附加组件是基于Zoot（Gavin Scott）创建的(https://blenderartists.org/t/does-anyone-know-of-an-addon-that-can-set-a-unique-resolution-for-each-camera/1252294/4?u=sidewaysupjoe)建议。
 
-Note: you can use the timeline and set markers for changing cameras, BUT AGAIN, this add-on only works for still images and not animations. What ever active camera is set will effect the rendered resolution.
+原发布链接：https://github.com/SidewaysUpJoe/blender-Change-Render-Resolution-Based-On-Camera-Name 
 
-If you run into an issue, enabled the "System Console" (top menu -> Window -> Toggle System Console) and you will see alittle debug info which might help.
+2023年6月17日BlenderCN社区yang（gitee用户名1D阳）进行升级，
+消除Writing to ID classes in this context is not allowed: Scene, Scene datablock, error setting ......错误。
+
+
+ **如果命名相机，后跟-（连字符）和分辨率，则它将渲染为该分辨率。** 
+
+示例：CameraOne-1920x1080
+
+渲染分辨率将为1920x1080
+
+
+相机一-3840x2160
+
+渲染分辨率将为3840x2160
+
+
+加载项面板位于“输出属性”面板中。
+
+有三种选择：
+
+1） 启用/禁用以在渲染过程中自动更改分辨率（F12）
+
+2） 渲染完成后恢复原始集分辨率
+
+3） “更改面板中的分辨率”按钮。此按钮可以配置为“关键点映射”（默认Ctrl-NUM_0，在“混合器关键点映射设置”中搜索“摄影机分辨率渲染更改器”），并且只会更改“输出面板”中的分辨率。
+
+
+注意：您可以使用时间线和设置标记来更改相机，但同样，此插件仅适用于静态图像，而不适用于动画。设置的始终处于活动状态的摄影机将影响渲染的分辨率。
+
+
+如果你遇到问题，启用“系统控制台”（顶部菜单->窗口->切换系统控制台），你会看到一些可能有帮助的调试信息。
