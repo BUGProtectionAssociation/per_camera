@@ -3,7 +3,7 @@
 以下加载项仅适用于静态图像，而不适用于动画。
 
 
-### 在blender搅拌机3.5上测试
+### 在blender 3.5 3D搅拌机3.5 上测试
 
 
 此附加组件是基于Zoot（Gavin Scott）创建的(https://blenderartists.org/t/does-anyone-know-of-an-addon-that-can-set-a-unique-resolution-for-each-camera/1252294/4?u=sidewaysupjoe)建议。
