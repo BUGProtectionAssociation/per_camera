@@ -6,17 +6,13 @@ from bpy.app import handlers
 
 import re
 
-from bpy.props import BoolProperty, PointerProperty
+from bpy.props import BoolProperty, PointerProperty, IntProperty
 from bpy.types import (Panel,
                        Operator,
                        AddonPreferences,
                        PropertyGroup,
                        )
 from bpy.utils import register_class, unregister_class
-
-
-orgRes_x = 1920
-orgRes_y = 1080
 
 class addButtonChangeResInPanel(bpy.types.Operator):
     bl_idname = 'my.change_camera_res_in_panel'
@@ -42,6 +38,16 @@ class cameraResSettings(PropertyGroup):
         description="If auto change enabled, change back to the default resolution after render is finished",
         default = True,
         )
+    
+    orgRes_x : IntProperty(
+        name="orgRes_x",
+        default=1920
+    )
+
+    orgRes_y : IntProperty(
+        name="orgRes_y",
+        default=1080
+    )
 
 
 class cameraRes_Panel(Panel):
@@ -97,7 +103,7 @@ def cancel(scene):
 def check_for_work(scene):
     cameraRestPanel = scene.cameraRes_tool
     changeOn = cameraRestPanel.cameraRes_bool
-    if changeOn == False :
+    if changeOn is False :
         return
         
     do_work(scene)
@@ -105,10 +111,10 @@ def check_for_work(scene):
 
 # worker...
 def do_work(scene):
-    global orgRes_x, orgRes_y
+    cameraRestPanel = scene.cameraRes_tool
     
-    orgRes_x = bpy.context.scene.render.resolution_x
-    orgRes_y = bpy.context.scene.render.resolution_y
+    cameraRestPanel.orgRes_x = bpy.context.scene.render.resolution_x
+    cameraRestPanel.orgRes_y = bpy.context.scene.render.resolution_y
     
     print('   TEST - do_work')
     cName = bpy.context.scene.camera.name
@@ -134,15 +140,14 @@ def do_work(scene):
 
 
 def changeBackToDefault(scene):
-    global orgRes_x, orgRes_y
-    
     cameraRestPanel = scene.cameraRes_tool
     changeBack = cameraRestPanel.cameraResDefault_bool
-    if changeBack == False :
+    if changeBack is False :
         return
     
-    bpy.context.scene.render.resolution_x = int(orgRes_x)
-    bpy.context.scene.render.resolution_y = int(orgRes_y)
+    # 全局的参数 报错 不让用，那就用储存在bl里的试试
+    bpy.context.scene.render.resolution_x = cameraRestPanel.orgRes_x
+    bpy.context.scene.render.resolution_y = cameraRestPanel.orgRes_y
 
 
 clear_handlers()
