@@ -111,10 +111,10 @@ def check_for_work(scene):
 
 # worker...
 def do_work(scene):
-    cameraRestPanel = scene.cameraRes_tool
+    # cameraRestPanel = scene.cameraRes_tool
     
-    cameraRestPanel.orgRes_x = bpy.context.scene.render.resolution_x
-    cameraRestPanel.orgRes_y = bpy.context.scene.render.resolution_y
+    bpy.context.scene.cameraRes_tool.orgRes_x = int(bpy.context.scene.render.resolution_x)
+    bpy.context.scene.cameraRes_tool.orgRes_y = int(bpy.context.scene.render.resolution_y)
     
     print('   TEST - do_work')
     cName = bpy.context.scene.camera.name
@@ -140,14 +140,13 @@ def do_work(scene):
 
 
 def changeBackToDefault(scene):
-    cameraRestPanel = scene.cameraRes_tool
+    cameraRestPanel = bpy.context.scene.cameraRes_tool
     changeBack = cameraRestPanel.cameraResDefault_bool
     if changeBack is False :
         return
     
-    # 全局的参数 报错 不让用，那就用储存在bl里的试试
-    bpy.context.scene.render.resolution_x = cameraRestPanel.orgRes_x
-    bpy.context.scene.render.resolution_y = cameraRestPanel.orgRes_y
+    bpy.context.scene.render.resolution_x = int(cameraRestPanel.orgRes_x)
+    bpy.context.scene.render.resolution_y = int(cameraRestPanel.orgRes_y)
 
 
 clear_handlers()
@@ -156,7 +155,6 @@ clear_handlers()
 @persistent
 def load_handler(dummy):
     print("Load Handler:", bpy.data.filepath)
-
 
 
 
@@ -178,7 +176,7 @@ def register():
     kc = wm.keyconfigs.addon
     if kc:
         km = wm.keyconfigs.addon.keymaps.new(name='Object Mode', space_type='EMPTY')
-        kmi = km.keymap_items.new(addButtonChangeResInPanel.bl_idname, 'NUMPAD_0', 'PRESS', ctrl=True, shift=False)
+        kmi = km.keymap_items.new(addButtonChangeResInPanel.bl_idname, 'NUMPAD_0', 'PRESS', ctrl=True, shift=True)
         addon_keymaps.append((km, kmi))
     
     
