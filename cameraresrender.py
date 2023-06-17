@@ -68,7 +68,7 @@ class cameraRes_Panel(Panel):
         
         layout.prop(cameraRestPanel, "cameraRes_bool")
         layout.prop(cameraRestPanel, "cameraResDefault_bool")
-        layout.operator("my.change_camera_res_in_panel", icon='CAMERA_DATA', text="Change Resolution In Panel")
+        layout.operator("my.change_camera_res_in_panel", icon='CAMERA_DATA', text="应用激活相机的分辨率")
         
 frame_handlers = [getattr(handlers, name)
         for name in dir(handlers) if name.startswith("render_")]
